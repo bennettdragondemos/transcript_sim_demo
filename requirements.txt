@@ -2,7 +2,7 @@ chardet
 xmltodict
 spacy
 nltk
-pytorch
+torch
 transformers
 python-dotenv 
 python-pype-lang-3
