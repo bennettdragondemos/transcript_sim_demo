@@ -18,7 +18,7 @@ If you open this file, you will see two parameters:
 ### GPU issues
 If you have not run pytorch using the GPU in your current environment, you may simply want to save yourself the hassle and run this in CPU.  This will cause the script to run for several minutes versus 10 seconds with a GPU.  If you get an OutOfMemoryError, you may want to try changing `BERT_MODEL` to `bert-base-uncased`. 
 
-Alternatively, you may have a GPU but it is not one of the ones that is easy to support.  Therefore, you should install `nvidia-smi` and `nvcc` to check the version of the Cuda driver, and follow the instructions in https://pytorch.org/get-started/locally/.  You should delete `pytorch` from your `requirements.txt` file and install it in a conda environment.  Install all other libraries in `requirements.txt` using pip.
+Alternatively, you may have a GPU but have not run pytorch yet.  Therefore, you should install `nvidia-smi` and `nvcc` to check the version of the Cuda driver, and follow the instructions in https://pytorch.org/get-started/locally/.  If you need to install pytorch in a conda environment, you should delete `torch` from your `requirements.txt` file and install `pytorch` in a conda environment.  Install all other libraries in `requirements.txt` using pip.
 
 ### Using a virtual environment
 If you are not using conda, you should definitely consider running this in a virtual environment.  To do this, type:
