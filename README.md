@@ -3,7 +3,7 @@
 Welcome to the Causeway transcript similarity demo.  Please follow the instructions for a pleasant installation and running experience.  Please refer to the pdf document for a description of the algorithm.
 
 ## Installation
-I advise you to run this on python 3.9 or above, on a 16gb Ubuntu machine with a GPU.  You can, however, run this on a CPU machine, although it will probably take a few minutes.
+I advise you to run this on python 3.9 or above, on a 16gb Ubuntu machine with a 6gb GPU.  You can, however, run this on a CPU machine, although it will probably take a few minutes.
 
 ### The .env file
 This project uses two environment variables which are set when the project is run.  You must first copy the template file to a file called `.env`, which will allow you to set these variables:
@@ -16,10 +16,12 @@ If you open this file, you will see two parameters:
 * BERT_DEVICE - 'cuda' if you would like to use a GPU, otherwise 'cpu'.
 
 ### GPU issues
-If you have not run pytorch using the GPU in your current environment, you may simply want to save yourself the hassle and run this in CPU.  In other words, only run in GPU mode if you've done it before, because it can be a pain to set up pytorch on a new machine.
+If you have not run pytorch using the GPU in your current environment, you may simply want to save yourself the hassle and run this in CPU.  This will cause the script to run for several minutes versus 10 seconds with a GPU.  If you get an OutOfMemoryError, you may want to try changing `BERT_MODEL` to `bert-base-uncased`. 
+
+Alternatively, you may have a GPU but it is not one of the ones that is easy to support.  Therefore, you should install `nvidia-smi` and `nvcc` to check the version of the Cuda driver, and follow the instructions in https://pytorch.org/get-started/locally/.  You should delete `pytorch` from your `requirements.txt` file and install it in a conda environment.  Install all other libraries in `requirements.txt` using pip.
 
 ### Using a virtual environment
-You should definitely consider running this in a virtual environment.  To do this, type:
+If you are not using conda, you should definitely consider running this in a virtual environment.  To do this, type:
 ```
 python -m venv causeway_environment
 source causeway_environment/bin/activate
@@ -28,17 +30,16 @@ To deactivate, do:
 ```
 deactivate
 ```
-You could also use conda, which does help in certain circumstances when you want to configure pytorch to certain GPU models (https://pytorch.org/get-started/locally/).
 
 ### The install script
 The installation can be taken care of by running:
 ```
 ./install.sh
 ```
-This will install everything and download the necessary nltk modules.
+This will install the libraries and download the necessary nltk modules.
 
 ## Running
-To run the demo, first copy your XML files into a directory `bullock_transcripts`.  Now, you can run the script:
+To run the demo, ensure that your XML files are in a directory `bullock_transcripts`, in the same directory as the script.  Now, you can run the script:
 ```
 python transcript_sim.py bullock_transcripts
 ```
