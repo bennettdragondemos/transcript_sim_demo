@@ -15,7 +15,7 @@ If you open this file, you will see two parameters:
 * BERT_MODEL - The BERT model you are using, from HuggingFace (https://huggingface.co/).
 * BERT_DEVICE - 'cuda' if you would like to use a GPU, otherwise 'cpu'.
 
-### GPU issues
+### GPU issues (READ THIS!!!!)
 If you have not run pytorch using the GPU in your current environment, you may simply want to save yourself the hassle and run this in CPU.  This will cause the script to run for several minutes versus 10 seconds with a GPU.  If you get an OutOfMemoryError, you may want to try changing `BERT_MODEL` to `bert-base-uncased`. 
 
 Alternatively, you may have a GPU but have not run pytorch yet.  Therefore, you should install `nvidia-smi` and `nvcc` to check the version of the Cuda driver, and follow the instructions in https://pytorch.org/get-started/locally/.  If you need to install pytorch in a conda environment, you should delete `torch` from your `requirements.txt` file and install `pytorch` in a conda environment.  Install all other libraries in `requirements.txt` using pip.
