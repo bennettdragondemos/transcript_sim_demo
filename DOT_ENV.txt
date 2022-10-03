@@ -1,0 +1,2 @@
+BERT_MODEL=bert-large-uncased
+BERT_DEVICE=cuda
