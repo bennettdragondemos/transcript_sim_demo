@@ -1,6 +1,6 @@
 # causeway_demo
 
-Welcome to the Causeway transcript similarity demo.  Please follow the instructions for a pleasant installation and running experience.  Please refer to the pdf document for a description of the algorithm.
+Welcome to the Causeway transcript similarity demo.  Please follow the instructions for a pleasant installation and running experience.  Please refer to the pdf `causeway_metric.pdf` for a description of the algorithm.
 
 ## Installation
 I advise you to run this on python 3.9 or above, on a 16gb Ubuntu machine with a 6gb GPU.  You can, however, run this on a CPU machine, although it will probably take a few minutes.
@@ -56,4 +56,3 @@ You will see an output of form:
  ```
  where `comany_n` is the `n`-th company, `compared_company_n` is the company with maximum similarity to `company_n`, `file_name_n` is the file name for the XML transcript of `company_n`, `original_text_1,m` is the original text of the `m`-th line in the file for `company_n`, `original_text_2,o` is the `o`-th line in the file for `compared_company_n`, `text_1,m` is the filtered text from `original_text_1,m`, `text_2,o` is the filtered text for `original_text_2,o`, and `sim_m` is the similarity between these two texts.
 
-```
